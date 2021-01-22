@@ -1,0 +1,16 @@
+# Enables H2 Console
+spring.h2.console.enabled=true
+
+# Sets h2 url
+spring.datasource.url=jdbc:h2:mem:testdb
+
+# Turns Statistics on
+spring.jpa.properties.hibernate.generate_statistics=true
+logging.level.org.hibernate.stat=debug
+
+# Show all queries
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# Enable logging of queries parameters
+logging.level.org.hibernate.type=trace

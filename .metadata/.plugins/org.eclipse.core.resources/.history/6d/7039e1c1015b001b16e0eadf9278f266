@@ -1,0 +1,12 @@
+package com.in28minutes.jpa.hibernate.demo.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Course {
+
+	private Long id;
+	
+	
+	
+}

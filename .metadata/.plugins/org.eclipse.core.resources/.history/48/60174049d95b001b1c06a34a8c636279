@@ -1,0 +1,20 @@
+package com.in28minutes.jpa.hibernate.demo.repository;
+
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.test.context.SpringBootTest;
+
+// launches spring boot context
+@SpringBootTest()
+public class CourseRepositoryTest {
+
+	private Logger logger  = LoggerFactory.getLogger(CourseRepositoryTest.class);
+		
+	
+	@Test
+	public void contextLoads() {
+		logger.info("Testing is Running");
+	}
+
+}

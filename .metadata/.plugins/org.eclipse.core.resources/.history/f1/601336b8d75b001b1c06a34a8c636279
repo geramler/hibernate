@@ -1,0 +1,9 @@
+package com.in28minutes.jpa.hibernate.demo.repository;
+
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SprintBootTest
+public class CourseRepositoryTest {
+
+}

@@ -1,0 +1,5 @@
+# Enables H2 Console
+spring.h2.console.enabled=true
+
+# Turns Statistics on
+spring.jpa.properties.hibernate.generate_statistics=true

@@ -1,0 +1,15 @@
+package com.in28minutes.jpa.hibernate.demo.repository;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+// launches spring context
+@SpringBootTest()
+public class CourseRepositoryTest {
+
+	@Test
+	public void contextLoads() {
+
+	}
+
+}
