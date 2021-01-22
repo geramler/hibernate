@@ -26,7 +26,7 @@ public class CourseRepository {
 		// insert
 		if (course.getId() == null) {
 			em.persist(course);
-			// update
+		// update
 		} else {
 			em.merge(course);
 		}
