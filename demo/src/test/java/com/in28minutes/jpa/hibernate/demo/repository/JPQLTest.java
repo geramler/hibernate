@@ -24,14 +24,14 @@ public class JPQLTest {
 
 	@Test
 	public void findAll_basic() {
-		TypedQuery<Course> query = em.createQuery("Select c From Course c", Course.class);
+		TypedQuery<Course> query = em.createNamedQuery("query_get_all_courses", Course.class);
 		List<Course> resultList = query.getResultList();
 		logger.info("Select c From Course c -> {}", resultList);
 	}
 
 	@Test
 	public void findByWhere_basic() {
-		TypedQuery<Course> query = em.createQuery("Select c From Course c where name like '%100 Steps'", Course.class);
+		TypedQuery<Course> query = em.createNamedQuery("query_get_100_steps_courses", Course.class);
 		List<Course> resultList = query.getResultList();
 		logger.info("Select c From Course c -> {}", resultList);
 	}
