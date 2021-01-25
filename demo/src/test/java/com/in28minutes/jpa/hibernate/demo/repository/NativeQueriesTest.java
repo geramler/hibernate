@@ -23,7 +23,7 @@ public class NativeQueriesTest {
 	EntityManager em;
 
 	@Test
-	public void native_queries_with_parameter() {
+	public void native_queries_with_positional_parameter() {
 		Query query = em.createNativeQuery("select * from Course where id = ?", Course.class);
 		query.setParameter(1, 10001L);
 		List resultList = query.getResultList();
@@ -37,7 +37,8 @@ public class NativeQueriesTest {
 		List resultList = query.getResultList();
 		logger.info("Select * From Course -> {}", resultList);
 	}
-	
+
+	// massive update, principal usage of native queries
 	@Test
 	@Transactional
 	public void native_queries_to_update() {
@@ -45,5 +46,5 @@ public class NativeQueriesTest {
 		int noOfRowsUpdated = query.executeUpdate();
 		logger.info("noOfRowUpdated -> {}", noOfRowsUpdated);
 	}
-	
+
 }
