@@ -28,7 +28,7 @@ public class StudentRepository {
 		// insert
 		if (student.getId() == null) {
 			em.persist(student);
-		// update
+			// update
 		} else {
 			em.merge(student);
 		}
@@ -51,9 +51,9 @@ public class StudentRepository {
 	public void insertStudentAndCourse(Student student, Course course) {
 		student.addCourse(course);
 		course.addStudent(student);
-		
+
 		em.persist(student);
 		em.persist(course);
 	}
-	
+
 }
