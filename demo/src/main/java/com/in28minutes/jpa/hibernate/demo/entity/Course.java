@@ -6,9 +6,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -36,8 +36,11 @@ public class Course {
 	@CreationTimestamp
 	private LocalDateTime createdDate;
 
-	@OneToMany(mappedBy="course"/*, fetch=FetchType.EAGER*/)
+	@OneToMany(mappedBy = "course"/* , fetch=FetchType.EAGER */)
 	private List<Review> reviews = new ArrayList<>();
+
+	@ManyToMany(mappedBy="courses")
+	private List<Student> students = new ArrayList<>();
 
 	// ensures that other classes which don't inherit from Course
 	// will not be able to use the constructor
@@ -71,6 +74,14 @@ public class Course {
 
 	public void removeReview(Review review) {
 		this.reviews.remove(review);
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void addStudent(Student student) {
+		this.students.add(student);
 	}
 
 	@Override

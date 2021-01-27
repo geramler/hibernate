@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.in28minutes.jpa.hibernate.demo.entity.Course;
 import com.in28minutes.jpa.hibernate.demo.entity.Passport;
 import com.in28minutes.jpa.hibernate.demo.entity.Student;
 
@@ -46,4 +47,13 @@ public class StudentRepository {
 		student.setPassport(passport);
 		em.persist(student);
 	}
+
+	public void insertStudentAndCourse(Student student, Course course) {
+		student.addCourse(course);
+		course.addStudent(student);
+		
+		em.persist(student);
+		em.persist(course);
+	}
+	
 }

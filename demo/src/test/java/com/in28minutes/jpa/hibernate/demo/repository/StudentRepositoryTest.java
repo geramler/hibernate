@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.in28minutes.jpa.hibernate.demo.entity.Course;
 import com.in28minutes.jpa.hibernate.demo.entity.Passport;
 import com.in28minutes.jpa.hibernate.demo.entity.Student;
 
@@ -51,6 +52,7 @@ public class StudentRepositoryTest {
 
 		// Database Operation 4 - update student
 		student.setName("Ranga - updated");
+
 		// Persistence Context (student++, passport++)
 	}
 
@@ -61,5 +63,14 @@ public class StudentRepositoryTest {
 		logger.info("passport -> {}", passport);
 		logger.info("student -> {}", passport.getStudent());
 	}
-	
+
+	@Test
+	@Transactional
+	public void retrieveStudentAndCourses() {
+		Student student = em.find(Student.class, 20001L);
+		logger.info("student --> {}", student);
+		logger.info("student.getCourses() --> {}", student.getCourses());
+
+	}
+
 }
