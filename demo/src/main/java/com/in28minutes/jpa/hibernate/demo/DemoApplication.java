@@ -35,7 +35,7 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		/*
+/*
 		 * studentRepository.saveSudentWithPassport();
 		 * 
 		 * List<Review> reviews = new ArrayList<>();
@@ -49,7 +49,7 @@ public class DemoApplication implements CommandLineRunner {
 		 * 
 		 * studentRepository.insertStudentAndCourse(new Student("Jack"), new
 		 * Course("Microservices in 100 Steps"));
-		 */
+*/
 		employeeRepository.insert(new FullTimeEmployee("Jack", new BigDecimal(10000)));
 		employeeRepository.insert(new PartTimeEmployee("Jill", new BigDecimal(50)));
 		logger.info("All Employees -> {}" + employeeRepository.retrieveAllEmployees());
